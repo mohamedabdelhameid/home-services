@@ -1,0 +1,35 @@
+<section class="bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 py-16">
+
+    <div class="flex items-center justify-between mb-10">
+      <div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Our Services</h2>
+        <p class="text-blue-600 text-sm">Expert care for every corner of your home.</p>
+      </div>
+    </div>
+
+    <owl-carousel-o [options]="customOptions">
+
+    @for (service of services; track $index) {
+      <ng-template carouselSlide>
+<div class="bg-white rounded-xl border border-gray-200 p-6 h-full flex flex-col">
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 mb-5">
+            <i [class]="service.icon" class="text-lg"></i>
+          </div>
+
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ service.title }}</h3>
+          <p class="text-sm text-gray-500 leading-6 mb-4 flex-1">{{ service.description }}</p>
+
+          <a href="#" class="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700">
+            Explore
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </ng-template>
+    }
+
+  </owl-carousel-o>
+
+  </div>
+</section>
+
